@@ -1,0 +1,8 @@
+[package]
+name = "common"
+type = "lib"
+authors = [""]
+
+[dependencies]
+noir_edwards = { tag = "v0.2.5", git = "https://github.com/noir-lang/noir-edwards" }
+poseidon = { tag = "v0.1.1", git = "https://github.com/noir-lang/poseidon" }

@@ -1,0 +1,7 @@
+[workspace]
+members = [
+  "crates/common",
+  "crates/ask",
+  "crates/encrypt_packet",
+  "crates/sale"
+]

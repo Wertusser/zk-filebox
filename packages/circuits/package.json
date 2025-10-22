@@ -1,0 +1,15 @@
+{
+  "name": "@zk-filebox/circuits",
+  "version": "0.0.1",
+  "description": "",
+  "exports": {
+    "./index": {
+      "types": "./generated/index.ts",
+      "default": "./dist/index.js"
+    }
+  },
+  "scripts": {
+    "test": "nargo test",
+    "build": "sh ./build.sh"
+  }
+}
