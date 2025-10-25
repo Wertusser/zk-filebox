@@ -1,0 +1,7 @@
+from_pub = ["", ""]
+key_commitment = ""
+master_key = ""
+nonce = ""
+private_key = ""
+salt = ""
+to_pub = ["", ""]
