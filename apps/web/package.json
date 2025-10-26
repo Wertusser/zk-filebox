@@ -29,7 +29,6 @@
     "@rainbow-me/rainbowkit": "^2.2.9",
     "@tanstack/react-query": "^5.90.5",
     "@tanstack/react-table": "^8.21.3",
-    "@zk-filebox/circuits": "workspace:*",
     "abitype": "^1.0.8",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
