@@ -1,0 +1,7 @@
+[package]
+name = "encrypt_keys"
+type = "bin"
+authors = [""]
+
+[dependencies]
+common = { path = "../common" }

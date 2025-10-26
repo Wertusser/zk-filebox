@@ -1,5 +1,5 @@
 [package]
-name = "sale"
+name = "verify_decrypt"
 type = "bin"
 authors = [""]
 
