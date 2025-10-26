@@ -1,5 +1,5 @@
 import { fromHex, Hex, toHex } from "viem";
-import { HexSchema } from "./common.js";
+import { HexSchema } from "./common";
 import z from "zod";
 
 export const BN254_MODULUS =

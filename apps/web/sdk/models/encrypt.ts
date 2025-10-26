@@ -5,23 +5,23 @@ import {
   encrypt_packet_circuit,
   get_key_commitmentInputType,
   get_key_commitment_circuit,
-} from "../generated/index.js";
+} from "../generated/index"
 import {
   generateWitness,
   ReturnWithWitness,
   verifyProofData,
-} from "../utils/proof-utils.js";
-import { bigintToField, Field, FieldSchema } from "../utils/field.js";
+} from "../utils/proof-utils"
+import { bigintToField, Field, FieldSchema } from "../utils/field"
 import {
   BYTES_PER_FIELD,
   DataBlob,
   dataBlobToFields,
   FIELDS_PER_DATA_BLOB,
-} from "./data-blobs.js";
+} from "./data-blobs";
 import z from "zod";
 import { Hex, pad } from "viem";
-import { Bytes } from "../utils/common.js";
-import { deriveBigInt } from "../utils/random.js";
+import { Bytes } from "../utils/common";
+import { deriveBigInt } from "../utils/random";
 
 export const EncryptedDataBlobSchema = z.object({
   keyCommitment: FieldSchema,

@@ -1,6 +1,6 @@
 import { bytesToHex, concat, toBytes } from "viem";
-import { Field, hexToField } from "./field.js";
-import { Bytes } from "./common.js";
+import { Field, hexToField } from "./field";
+import { Bytes } from "./common";
 
 export function chunk<T>(arr: T[], chunkLength: number): T[][] {
   if (chunkLength <= 0) throw new Error("chunkLength must be greater than 0");

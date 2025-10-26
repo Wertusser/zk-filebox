@@ -6,10 +6,38 @@ import { XIcon } from "lucide-react";
 
 import { cn } from "@/lib/utils";
 
+export type IRenderable<TData> =
+  | React.ReactNode
+  | ((data: TData) => React.ReactNode);
+
+export function render<TData>(data: TData, renderable: IRenderable<TData>) {
+  if (typeof renderable === "function") {
+    return renderable(data);
+  }
+  return renderable;
+}
+
 function Dialog({
+  defaultOpen,
+  children,
   ...props
 }: React.ComponentProps<typeof DialogPrimitive.Root>) {
-  return <DialogPrimitive.Root data-slot="dialog" {...props} />;
+  const [open, setOpen] = React.useState(defaultOpen);
+
+  const controller = React.useMemo(
+    () => ({
+      close: () => setOpen(false),
+      set: setOpen,
+      toggle: () => setOpen((x) => !x),
+    }),
+    [setOpen]
+  );
+
+  return (
+    <DialogPrimitive.Root open={open} onOpenChange={setOpen} {...props}>
+      {render(controller, children)}
+    </DialogPrimitive.Root>
+  );
 }
 
 function DialogTrigger({

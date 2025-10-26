@@ -1,6 +1,6 @@
 import { zlibSync, unzlibSync } from "fflate";
 import { encode, decode } from "@msgpack/msgpack";
-import { Bytes } from "./common.js";
+import { Bytes } from "./common";
 
 export function compress(bytes: Bytes): Bytes {
   return new Uint8Array([...zlibSync(bytes, { level: 9 })]);

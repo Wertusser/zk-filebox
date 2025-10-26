@@ -1,5 +1,5 @@
 import { FileIcon, PlusIcon } from "lucide-react";
-
+import { toast } from "sonner";
 import { Button } from "@/components/ui/button";
 import {
   Dialog,
@@ -27,6 +27,7 @@ import {
   FormLabel,
   FormMessage,
 } from "./ui/form";
+import { bytesToBundle, encryptBundle } from "@/sdk/models/bundle";
 
 const formSchema = z.object({
   name: z.string().min(2, {
@@ -57,7 +58,6 @@ export function AddProductDialog() {
   });
 
   const handlePreviewDrop = (files: File[]) => {
-    console.log(files);
     if (files.length > 0) {
       const reader = new FileReader();
       reader.onload = (e) => {
@@ -70,9 +70,31 @@ export function AddProductDialog() {
   };
 
   function onSubmit(values: z.infer<typeof formSchema>) {
-    // Do something with the form values.
-    // ✅ This will be type-safe and validated.
-    console.log(values);
+    toast.info("Creating an encypted bundle...");
+    const task = async () => {
+      const previewBuffer = await values.previewImg.arrayBuffer();
+      const previewUrl = Buffer.from(previewBuffer).toString("base64");
+
+      const contentBytes = await values.content.arrayBuffer();
+      const bundle = await encryptBundle({
+        bundle: bytesToBundle.encode(new Uint8Array(contentBytes)),
+        seed: BigInt(0),
+      });
+
+      console.log({
+        previewUrl,
+        name: values.name,
+        description: values.description,
+        bundle,
+      });
+    };
+
+    task()
+      .then(() => toast.success("Product has been created!"))
+      .catch((err) => {
+        toast.error("Something went wrong");
+        console.log(err);
+      });
   }
 
   return (
@@ -88,10 +110,10 @@ export function AddProductDialog() {
           <DialogContent className="sm:max-w-xl">
             <DialogHeader>
               <DialogTitle>Add product</DialogTitle>
-              <DialogDescription>
-                Make changes to your profile here. Click save when you&apos;re
+              {/* <DialogDescription>
+                Make changes to  profile here. Click save when you&apos;re
                 done.
-              </DialogDescription>
+              </DialogDescription> */}
             </DialogHeader>
             <div className="grid gap-4">
               <div className="flex flex-wrap gap-4 justify-between">
@@ -239,8 +261,8 @@ export function AddProductDialog() {
             </div>
             <DialogFooter>
               <DialogClose asChild>
-                <Button onClick={instance.handleSubmit(onSubmit)} type="submit">
-                  Continue
+                <Button onClick={instance.handleSubmit(onSubmit)}>
+                  Save
                 </Button>
               </DialogClose>
             </DialogFooter>

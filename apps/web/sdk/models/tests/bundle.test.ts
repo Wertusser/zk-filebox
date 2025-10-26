@@ -5,9 +5,9 @@ import {
   decryptBundle,
   getBundleSecrets,
   verifyBundle,
-} from "../bundle.js";
+} from "../bundle";
 import { keccak256, toHex } from "viem";
-import { randomBytes } from "../../utils/random.js";
+import { randomBytes } from "../../utils/random";
 
 describe.skip("Bundle Operations", () => {
   describe("bytesToBundle", () => {

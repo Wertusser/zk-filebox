@@ -2,8 +2,8 @@ import { hkdf } from "@noble/hashes/hkdf";
 import { sha256 } from "@noble/hashes/sha2";
 import { randomBytes as _randomBytesSecure } from "@noble/hashes/utils";
 import { bytesToBigInt, keccak256, toBytes, toHex, type Hex } from "viem";
-import { bigintToField, BN254_MODULUS, Field } from "./field.js";
-import { Bytes } from "./common.js";
+import { bigintToField, BN254_MODULUS, Field } from "./field";
+import { Bytes } from "./common";
 
 export const DEFAULT_SALT = toBytes(keccak256(toHex("DEFAULT_SALT")));
 

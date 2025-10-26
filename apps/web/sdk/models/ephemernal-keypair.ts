@@ -3,10 +3,10 @@ import {
   derive_public_key_circuit,
   derive_shared_keyInputType,
   derive_shared_key_circuit,
-} from "../generated/index.js";
-import { generateWitness } from "../utils/proof-utils.js";
-import { Field } from "../utils/field.js";
-import { deriveField, randomField } from "../utils/random.js";
+} from "../generated/index"
+import { generateWitness } from "../utils/proof-utils";
+import { Field } from "../utils/field";
+import { deriveField, randomField } from "../utils/random";
 import { Hex } from "viem";
 
 export type EphemernalPublicKey = [Field, Field];

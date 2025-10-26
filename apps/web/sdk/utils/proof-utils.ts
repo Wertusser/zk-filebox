@@ -1,8 +1,8 @@
 import z from "zod";
 import { CompiledCircuit, InputMap, Noir } from "@noir-lang/noir_js";
 import { UltraHonkBackend } from "@aztec/bb.js";
-import { Bytes, BytesSchema } from "./common.js";
-import { FieldSchema } from "./field.js";
+import { Bytes, BytesSchema } from "./common";
+import { FieldSchema } from "./field";
 
 export type ReturnWithWitness<T> = {
   output: T;

@@ -3,14 +3,14 @@ import {
   decryptBlob,
   encryptBlob,
   verifyBlob,
-} from "./encrypt.js";
-import { bytesToDataBlobs, DataBlobSchema } from "./data-blobs.js";
-import { Field, FieldSchema } from "../utils/field.js";
-import { generateProof } from "../utils/proof-utils.js";
-import { BytesSchema, HexSchema } from "../utils/common.js";
+} from "./encrypt";
+import { bytesToDataBlobs, DataBlobSchema } from "./data-blobs";
+import { Field, FieldSchema } from "../utils/field";
+import { generateProof } from "../utils/proof-utils";
+import { BytesSchema, HexSchema } from "../utils/common";
 import { keccak256 } from "viem";
 import z from "zod";
-import { deriveField, deriveNonce } from "../utils/random.js";
+import { deriveField, deriveNonce } from "../utils/random";
 
 export const BundleSchema = z.object({
   dataHash: HexSchema,

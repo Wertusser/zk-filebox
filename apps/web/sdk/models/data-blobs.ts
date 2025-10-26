@@ -1,12 +1,12 @@
 import z from "zod";
 import { concat, fromRlp, pad, toRlp, type Hex } from "viem";
-import { BytesSchema } from "../utils/common.js";
+import { BytesSchema } from "../utils/common";
 import {
   chunkBytes,
   chunkBytesByFields,
   concatFields,
-} from "../utils/chunk-utils.js";
-import { FieldSchema, isField } from "../utils/field.js";
+} from "../utils/chunk-utils";
+import { FieldSchema, isField } from "../utils/field";
 
 export const BYTES_PER_FIELD = 31;
 export const FIELDS_PER_DATA_BLOB = 510;

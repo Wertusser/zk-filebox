@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { bigintToField, Field } from "../../utils/field.js";
+import { bigintToField, Field } from "../../utils/field"
 import {
   DecryptArgs,
   EncryptArgs,
@@ -7,15 +7,15 @@ import {
   decryptBlob,
   deterministicNonce,
   verifyBlob,
-} from "../encrypt.js";
+} from "../encrypt";
 import {
   bytesToDataBlobs,
   DataBlob,
   MAX_DATA_BLOB_SIZE,
-} from "../data-blobs.js";
+} from "../data-blobs";
 import { keccak256 } from "viem";
-import { generateProof } from "../../utils/proof-utils.js";
-import { randomBigInt, randomBytes, randomField } from "../../utils/random.js";
+import { generateProof } from "../../utils/proof-utils";
+import { randomBigInt, randomBytes, randomField } from "../../utils/random";
 
 describe("Encryption and Decryption", () => {
   // Helper function to create a sample DataBlob
