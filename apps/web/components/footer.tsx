@@ -2,7 +2,7 @@ import { Github } from "lucide-react";
 
 export function Footer() {
   return (
-    <footer className="self-end mt-auto border-t border-zinc-900 bg-black py-8 px-4">
+    <footer className="w-full self-end mt-auto border-t border-zinc-900 bg-black py-8 px-4">
       <div className="mx-auto max-w-6xl flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-zinc-500">
         <div className="flex items-center gap-2">
           <span>© {new Date().getFullYear()} zkFilebox</span>
