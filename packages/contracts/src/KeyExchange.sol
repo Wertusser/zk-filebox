@@ -15,6 +15,11 @@ contract KeyExchange {
     }
 
     uint256 public number;
+    address public paymentToken;
+
+    constructor(address payment) {
+        paymentToken = payment;
+    }
 
     function setNumber(uint256 newNumber) public {
         number = newNumber;

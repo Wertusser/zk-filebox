@@ -12,7 +12,9 @@ contract KeyExchangeScript is Script {
     function run() public {
         vm.startBroadcast();
 
-        KeyExchange = new KeyExchange();
+        address payment = address(0xCaC524BcA292aaade2DF8A05cC58F0a65B1B3bB9); // PYUSD
+
+        KeyExchange = new KeyExchange(payment);
 
         vm.stopBroadcast();
     }
