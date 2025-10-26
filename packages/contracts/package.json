@@ -3,7 +3,6 @@
     "version": "1.0.0",
     "description": "",
     "scripts": {
-      "postinstall": "forge install",
       "build": "forge build --via-ir",
       "dev": "sh ./deploy-anvil.sh"
     },
