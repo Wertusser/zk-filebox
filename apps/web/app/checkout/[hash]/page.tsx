@@ -45,7 +45,7 @@ export default function CheckoutPage() {
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <div className="space-y-2">
-                <Label className="text-zinc-400">Price (ETH)</Label>
+                <Label className="text-zinc-400">Price (PYUSD)</Label>
                 <Input
                   type="number"
                   min="0"

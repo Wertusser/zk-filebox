@@ -6,7 +6,7 @@ export function Header() {
   return (
     <header className="sticky top-0 z-30 border-b border-zinc-900 bg-black/80 backdrop-blur">
       <div className="mx-auto flex h-14 w-full max-w-6xl items-center justify-between px-4">
-        <nav className="hidden md:flex items-center gap-4 text-sm">
+        <nav className="flex items-center gap-4 text-sm">
           <Link
             href="/"
             className="inline-flex items-center gap-2 text-zinc-100"
