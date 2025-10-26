@@ -6,6 +6,7 @@ import { z } from "zod";
 import { DataTable } from "./ui/data-table";
 import { Card, CardContent, CardTitle } from "./ui/card";
 import { AddProductDialog } from "./add-product-dialog";
+import { Badge } from "./ui/badge";
 
 export const schema = z.object({
   name: z.string(),
@@ -18,7 +19,7 @@ const columns: ColumnDef<z.infer<typeof schema>>[] = [
     accessorKey: "name",
     header: "Name",
     cell: ({ row }) => {
-      return <div />;
+      return <span>{row.original.name}</span>;
     },
     enableHiding: false,
   },
@@ -26,7 +27,7 @@ const columns: ColumnDef<z.infer<typeof schema>>[] = [
     accessorKey: "price",
     header: "Price",
     cell: ({ row }) => {
-      return <div />;
+      return <span>{row.original.price} PYUSD</span>;
     },
     enableHiding: false,
   },
@@ -34,7 +35,11 @@ const columns: ColumnDef<z.infer<typeof schema>>[] = [
     accessorKey: "status",
     header: "Status",
     cell: ({ row }) => {
-      return <div />;
+      return (
+        <Badge>
+          <span>{row.original.status}</span>
+        </Badge>
+      );
     },
     enableHiding: false,
   },

@@ -42,16 +42,16 @@ export default function CheckoutPage() {
   const [signing, setSigning] = useState(false);
   const [status, setStatus] = useState("");
 
-  const [product, setProduct] = useState<Product | null>(null);
+  const [product_, setProduct] = useState<Product | null>(null);
 
   // Product data - in production this would come from URL params or props
-  const product_: Product = {
+  const product: Product = {
     name: "Premium Dataset Bundle",
     description:
       "High-quality encrypted dataset containing comprehensive market analysis, research data, and proprietary algorithms. Instant delivery upon purchase verification.",
     cid: "bafybeigdyrzt5sfp7udm7hu76uh7y26nf3efuylqabf3oclgtqy55fbzdi",
-    price: "0.05",
-    previewUrl: `/placeholder.svg?height=400&width=600&query=encrypted+data+bundle+visualization`,
+    price: "14.99",
+    previewUrl: `https://i.imgur.com/Eo4o6MR.png`,
   };
 
   useEffect(() => {
@@ -222,18 +222,19 @@ export default function CheckoutPage() {
 
                     <div className="space-y-2">
                       <Label htmlFor="note" className="text-zinc-400 text-sm">
-                        Delivery info (optional)
+                        Arbiter (optional)
                       </Label>
                       <Input
                         id="note"
                         value={note}
+                        disabled
                         onChange={(e) => setNote(e.target.value)}
-                        placeholder="email or public key for delivery"
+                        placeholder="wallet address of arbiter"
                         className="bg-black border-zinc-800 text-zinc-200 text-sm"
                       />
                       <p className="text-xs text-zinc-500">
-                        Provide contact info for the seller to deliver your
-                        license
+                        Provide wallet info of the arbiter to add aditional
+                        insurance for a purchase
                       </p>
                     </div>
 

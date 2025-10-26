@@ -1,7 +1,7 @@
 [workspace]
 members = [
   "crates/common",
-  "crates/ask",
+  "crates/request_keys",
   "crates/encrypt_packet",
-  "crates/sale"
+  "crates/encrypt_keys"
 ]
