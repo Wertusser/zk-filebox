@@ -80,9 +80,6 @@ importers:
       '@tanstack/react-table':
         specifier: ^8.21.3
         version: 8.21.3(react-dom@19.2.0(react@19.2.0))(react@19.2.0)
-      '@zk-filebox/circuits':
-        specifier: workspace:*
-        version: link:../../packages/circuits
       abitype:
         specifier: ^1.0.8
         version: 1.1.1(typescript@5.8.3)(zod@4.1.12)
