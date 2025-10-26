@@ -21,7 +21,7 @@ export function ProtocolStatistics() {
         <CardHeader>
           <CardDescription>Gross Revenue</CardDescription>
           <CardTitle className="text-2xl font-semibold tabular-nums @[250px]/card:text-3xl">
-            $1,250.00
+            $0.00
           </CardTitle>
         </CardHeader>
       </Card>
@@ -29,7 +29,7 @@ export function ProtocolStatistics() {
         <CardHeader>
           <CardDescription>Total Purchases</CardDescription>
           <CardTitle className="text-2xl font-semibold tabular-nums @[250px]/card:text-3xl">
-            12
+            0
           </CardTitle>
         </CardHeader>
       </Card>
