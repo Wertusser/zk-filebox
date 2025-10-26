@@ -35,6 +35,13 @@ import {
 } from "@/components/ui/table";
 import { PlusIcon } from "lucide-react";
 import { DataTable } from "./ui/data-table";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "./ui/card";
 
 export const schema = z.object({
   id: z.number(),
@@ -79,14 +86,18 @@ const columns: ColumnDef<z.infer<typeof schema>>[] = [
 
 export function ProductsTable({ data }: { data: z.infer<typeof schema>[] }) {
   return (
-    <div className="w-full flex flex-col gap-6">
-      <div className="w-full flex justify-end gap-2">
+    <Card className="bg-zinc-950 relative w-full flex flex-col gap-6">
+      <div className="flex justify-between items-center px-6">
+        <CardTitle>All products</CardTitle>
         <Button variant="default" size="sm">
           <PlusIcon />
-          <span className="hidden lg:inline">Add Filebox</span>
+          <span>Add Product</span>
         </Button>
       </div>
-      <DataTable columns={columns} data={data} />
-    </div>
+
+      <CardContent>
+        <DataTable columns={columns} data={data} />
+      </CardContent>
+    </Card>
   );
 }

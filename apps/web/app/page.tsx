@@ -24,10 +24,7 @@ export default function Home() {
               vendors.
             </p>
             <div className="flex flex-wrap gap-3">
-              <Button
-                asChild
-                className={cn("bg-emerald-500 hover:bg-emerald-400 text-black")}
-              >
+              <Button asChild>
                 <Link href="/manage">Start selling</Link>
               </Button>
             </div>

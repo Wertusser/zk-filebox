@@ -58,6 +58,9 @@ const config = createConfig({
 
 const queryClient = new QueryClient();
 
+const theme = darkTheme();
+theme.colors.accentColor = "#00bb7d";
+
 export function Providers({ children }: { children: React.ReactNode }) {
   return (
     <NextThemesProvider
@@ -68,7 +71,7 @@ export function Providers({ children }: { children: React.ReactNode }) {
     >
       <WagmiProvider config={config}>
         <QueryClientProvider client={queryClient}>
-          <RainbowKitProvider theme={darkTheme()}>
+          <RainbowKitProvider theme={theme}>
             {children}
           </RainbowKitProvider>
         </QueryClientProvider>
